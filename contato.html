@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turismo CWB | Contato</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="sites-header">
+        <h1 class="logo">Turismo CWB</h1>
+        <nav>
+            <ul>
+                 <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="portfolio.html">Pontos Turísticos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+         </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Fale conosco</h2>
+      <p>Dúvidas, sugestões de pontos turísticos ou parcerias? Envie uma mensagem.</p>
+    <form>
+    <!-- O form = agrupa campos que o usuario preenche e envia
+         label = "rotulo" de um campo. O atributo "for" deve
+         ser igual ao "id" do input correspondente, isso liga o texto ao campo
+         O atributo type define o tipo de entrada (no input) que o usuario deve fornecer.
+         A tag textarea permite criar uma area de texto multilinha, permitindo escrita de textos mais longos.
+         A tag button cria botoes clicaveis que executam acoes ao receber um clique do usuario
+    -->
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail</label>
+        <label type="email" id="email" name="email" required>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+        
+    </form>
+</section>
+
+<section>
+    <h3>Outros canais</h3>
+    <p>E-mail: contato@turismocwb.com</p>
+</section>
+</main>
+
+  <footer>
+    <p>&copy; 2026 Turismo CWB. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+           
