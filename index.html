@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turismo CWB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo CWB</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            background-color: rgb(34, 85, 51); /* verde floresta */
+            padding: 10px;
+        }
+
+        .btn-abrir {
+            color: rgb(245, 242, 240); /* branco */
+            font-size: 25px;
+        }
+
+        nav {
+            height: 100%;
+            width: 0px;
+            background-color: rgb(34, 85, 51); /* verde floresta */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            overflow-x: hidden;
+            transition: width 0.3s;
+        }
+
+        nav a {
+            color: rgb(245, 242, 240); /* branco */
+            font-size: 25px;
+            display: block;
+            padding: 12px 10px 12px 32px;
+        }
+
+        nav a:hover {
+            color: rgb(245, 242, 240); /* branco */
+            background-color: rgb(101, 67, 33);
+        }
+
+        main {
+            padding: 10px;
+            transition: margin-left 0.5s;
+            flex: 1;
+        }
+
+        footer p {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .barra-rodape {
+            height: 20px;
+            background-color: rgb(34, 85, 51); /* mesmo verde floresta do topo e do menu */
+        }
+    </style>
 </head>
 <body>
     <header>
-       <a href="index.html">&#9776; Abrir</a>
+       <a href="index.html" class="btn-abrir">&#9776; Abrir</a>
     </header>
     <nav>
          <a href="#">&times; Fechar</a>
@@ -15,13 +79,14 @@
          <a href="pontos-turisticos.html">Pontos Turísticos</a>
          <a href="contato.html">Contato</a>
     </nav>
-    <main>
+      <main>
         <h1>Turismo CWB</h1>
         <p>Bem-vindo ao site de Turismo CWB! Descubra os encantos da cidade de Curitiba e explore seus pontos turísticos, cultura e gastronomia.</p>
-</main>
+    </main>
 
-<footer>
-    <p>&copy; 2026 Turismo CWB. Todos os direitos reservados.</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 Turismo CWB. Todos os direitos reservados.</p>
+        <div class="barra-rodape"></div>
+    </footer>
 </body>
 </html>
