@@ -48,8 +48,8 @@
         }
 
         nav a:hover {
-            color: rgb(245, 242, 240); /* branco */
-            background-color: rgb(101, 67, 33);
+            color: rgb(0, 0, 0); /* branco */
+            background-color: rgb(248, 248, 248);
         }
 
         main {
@@ -71,15 +71,15 @@
 </head>
 <body>
     <header>
-       <a href="index.html" class="btn-abrir">&#9776; Abrir</a>
+       <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776; Abrir</a>
     </header>
-    <nav>
-         <a href="#">&times; Fechar</a>
+    <nav id="menu">
+         <a href="#" onclick="fecharMenu()">&times; Fechar</a>
          <a href="sobre.html">Sobre</a>
          <a href="pontos-turisticos.html">Pontos Turísticos</a>
          <a href="contato.html">Contato</a>
     </nav>
-      <main>
+      <main id="conteudo">
         <h1>Turismo CWB</h1>
         <p>Bem-vindo ao site de Turismo CWB! Descubra os encantos da cidade de Curitiba e explore seus pontos turísticos, cultura e gastronomia.</p>
     </main>
@@ -88,5 +88,18 @@
         <p>&copy; 2026 Turismo CWB. Todos os direitos reservados.</p>
         <div class="barra-rodape"></div>
     </footer>
+
+    <script>
+        function abrirMenu() {
+          document.getElementById("menu").style.width = "250px";
+          document.getElementById("conteudo").style.marginLeft = "250px";
+        }
+
+        function fecharMenu() {
+          document.getElementById("menu").style.width = "0px";
+          document.getElementById("conteudo").style.marginLeft = "0px";
+         
+        }
+    </script>
 </body>
 </html>
