@@ -1,0 +1,205 @@
+
+:root {
+    --cor-primaria: rgb(34, 85, 51);
+    --cor-primaria-escura: rgb(22, 58, 35);
+    --cor-texto-claro: rgb(245, 242, 240);
+    --cor-texto: rgb(33, 33, 33);
+    --cor-fundo-suave: rgb(240, 245, 241);
+    --cor-destaque: rgb(255, 190, 60);
+    --raio: 8px;
+    --transicao: 0.25s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a { text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+.topo {
+    background-color: var(--cor-primaria);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;       
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+}
+
+.logo {
+    color: var(--cor-texto-claro);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.topo nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.topo nav a {
+    color: var(--cor-texto-claro);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--raio);
+    transition: background-color var(--transicao);
+}
+
+.topo nav a:hover,
+.topo nav a.ativo {
+    background-color: var(--cor-primaria-escura);
+}
+
+.atalhos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    background-color: var(--cor-fundo-suave);
+}
+
+.atalho {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    color: var(--cor-primaria);
+}
+
+.icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    font-size: 2rem;
+    background-color: #fff;
+    border: 2px solid var(--cor-primaria);
+    border-radius: 50%;
+    transition: transform var(--transicao), background-color var(--transicao);
+}
+
+.atalho:hover .icone,
+.atalho:focus-visible .icone {
+    transform: translateY(-4px);
+    background-color: var(--cor-primaria);
+}
+
+.atalho::after {
+    content: attr(data-titulo);
+    position: absolute;
+    top: 82px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.35rem 0.75rem;
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto-claro);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    border-radius: var(--raio);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transicao);
+}
+
+.atalho:hover::after,
+.atalho:focus-visible::after {
+    opacity: 1;
+}
+
+
+.legenda {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (hover: none) {
+    .atalho::after { display: none; }
+    .legenda { display: block; }
+}
+
+main { flex: 1; }
+
+.bloco {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.bloco + .bloco {
+    padding-top: 2rem;
+    border-top: 1px solid rgb(220, 228, 222);  
+}
+
+.bloco h1,
+.bloco h2 { color: var(--cor-primaria); }
+
+.mapa {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(235, 235, 235);      
+    border-radius: var(--raio);
+}
+
+.rodape {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 2.5rem 1.5rem 1rem;
+}
+
+.rodape-colunas {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 2rem;
+}
+
+.rodape h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    color: var(--cor-destaque);
+}
+
+.rodape ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rodape li { margin-bottom: 0.5rem; }  
+
+.rodape a { color: var(--cor-texto-claro); }
+.rodape a:hover { text-decoration: underline; }
+
+.copyright {
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}

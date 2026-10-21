@@ -4,102 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turismo CWB</title>
-
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        header {
-            background-color: rgb(34, 85, 51); /* verde floresta */
-            padding: 10px;
-        }
-
-        .btn-abrir {
-            color: rgb(245, 242, 240); /* branco */
-            font-size: 25px;
-        }
-
-        nav {
-            height: 100%;
-            width: 0px;
-            background-color: rgb(34, 85, 51); /* verde floresta */
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            overflow-x: hidden;
-            transition: width 0.3s;
-        }
-
-        nav a {
-            color: rgb(245, 242, 240); /* branco */
-            font-size: 25px;
-            display: block;
-            padding: 12px 10px 12px 32px;
-        }
-
-        nav a:hover {
-            color: rgb(0, 0, 0); /* branco */
-            background-color: rgb(248, 248, 248);
-        }
-
-        main {
-            padding: 10px;
-            transition: margin-left 0.5s;
-            flex: 1;
-        }
-
-        footer p {
-            margin: 0;
-            padding: 10px;
-        }
-
-        .barra-rodape {
-            height: 20px;
-            background-color: rgb(34, 85, 51); /* mesmo verde floresta do topo e do menu */
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-       <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776; Abrir</a>
+
+    <!-- 1. BARRA DE NAVEGAÇÃO -->
+    <header class="topo">
+        <a href="index.html" class="logo">Turismo CWB</a>
+        <nav aria-label="Menu principal">
+            <a href="index.html" class="ativo">Início</a>
+            <a href="pontos-turisticos.html">Pontos Turísticos</a>
+            <a href="indicacoes.html">Indicações</a>
+            <a href="roteiros.html">Roteiros</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
     </header>
-    <nav id="menu">
-         <a href="#" onclick="fecharMenu()">&times; Fechar</a>
-         <a href="sobre.html">Sobre</a>
-         <a href="pontos-turisticos.html">Pontos Turísticos</a>
-         <a href="contato.html">Contato</a>
-    </nav>
-      <main id="conteudo">
-        <h1>Turismo CWB</h1>
-        <p>Bem-vindo ao site de Turismo CWB! Descubra os encantos da cidade de Curitiba e explore seus pontos turísticos, cultura e gastronomia.</p>
+
+    <main>
+        <section class="atalhos" aria-label="Atalhos">
+            <a href="pontos-turisticos.html" class="atalho" data-titulo="Pontos Turísticos">
+                <span class="icone" aria-hidden="true">📍</span>
+                <span class="legenda">Pontos Turísticos</span>
+            </a>
+            <a href="indicacoes.html" class="atalho" data-titulo="Indicações de Moradores">
+                <span class="icone" aria-hidden="true">💬</span>
+                <span class="legenda">Indicações de Moradores</span>
+            </a>
+            <a href="roteiros.html" class="atalho" data-titulo="Roteiros de Viagem">
+                <span class="icone" aria-hidden="true">🗺️</span>
+                <span class="legenda">Roteiros de Viagem</span>
+            </a>
+        </section>
+
+        <section class="bloco">
+            <h1>Descubra Curitiba</h1>
+            <p>Turismo CWB é uma plataforma colaborativa que conecta quem vive em Curitiba a quem chega para conhecê-la. Aqui, a cidade é contada por roteiros, dicas e lugares compartilhados por quem a conhece de verdade.</p>
+        </section>
+
+        <section class="bloco">
+            <h2>Para moradores e turistas</h2>
+            <p>Para os turistas, o site facilita o planejamento: roteiros prontos, pontos de interesse e informações em um só lugar.</p>
+            <p>Para os moradores, é uma forma de valorizar o que a cidade tem de melhor e divulgar espaços locais.</p>
+        </section>
+
+        <section class="bloco">
+            <h2>Explore o mapa da cidade</h2>
+            <p>Localize pontos turísticos, parques, museus e restaurantes, veja detalhes de cada local e monte roteiros do seu jeito.</p>
+            <div id="mapa" class="mapa"></div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 Turismo CWB. Todos os direitos reservados.</p>
-        <div class="barra-rodape"></div>
+    <footer class="rodape">
+        <div class="rodape-colunas">
+            <div>
+                <h3>O site</h3>
+                <ul>
+                    <li><a href="sobre.html">Sobre nós</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="colaborar.html">Como colaborar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="pontos-turisticos.html">Pontos turísticos</a></li>
+                    <li><a href="indicacoes.html">Indicações de moradores</a></li>
+                    <li><a href="roteiros.html">Roteiros de viagem</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Conheça outros sites</h3>
+                <ul>
+                    <li><a href="outros-sites.html">Outras cidades</a></li>
+                    <li><a href="outros-sites.html">Projetos parceiros</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Conheça a autora</h3>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/SEU-PERFIL" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Turismo CWB. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        function abrirMenu() {
-          document.getElementById("menu").style.width = "250px";
-          document.getElementById("conteudo").style.marginLeft = "250px";
-        }
-
-        function fecharMenu() {
-          document.getElementById("menu").style.width = "0px";
-          document.getElementById("conteudo").style.marginLeft = "0px";
-         
-        }
-    </script>
 </body>
 </html>
